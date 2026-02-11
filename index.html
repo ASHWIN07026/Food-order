@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Order Form</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+
+      /* Background Image */
+      background: url("https://cdn.magicdecor.in/com/2023/09/29161336/banner-fast-food-background-mockup.jpg")
+        no-repeat center center/cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.65);
+      z-index: -1;
+    }
+
+    /* Form Card */
+    .form-card {
+      width: 700px;
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.7);
+    }
+
+    /* Left Image Template */
+    .left-banner {
+      width: 40%;
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAGQCAMAAABbMfTBAAACo1BMVEUAAADGBCr///8GBgbJBCsKAADMBCvPBCy8BChbAhODAxsXAASeAyE0MzQQAABkOkL67vD86OshAACqBCKmfYTWur/FACNdKzSZeX7EAB+1l5vz0df/9/jeycuZc3kNCwv29vauho0cAADR0dG8lp356tYUERLEABnVsrjnxcsrAACGVV/LqK0kIyNPT0/u7u6trKwUDQbh4eFmAAD78OFAAAAcGRpRABg7PT+sAABTAAAzAADyAADDAABXXWReXV0+REoAAA3gAAAtLCsAFwBYAAD80o4ACwBGLxs9FQNKIAVSJACAAABDAAAhFwDOoDA4HgtPSEOEdWuTAADz3cGvsUdBRgbTUmfnnKhfRElaVVJ0c3HDwsKCgIA6NTFoY2DJIDvYZnrN2eRQVlwuKSIlEgaeVhDOQzJ3fkbVZzuPUSZILg2iYS6GiT3GUBjhfWN9jzKaqVxXcwBLYROxv2IYKgAuOwwzSwBkhQCSpzjF00nDyZVbTyJPUSyZmHlmV02lkH7JtKSemGCXeS35h39fZjmoRiyWZC7tZVpfcR2FogCruHJQSQAlNQra4rOkpZNvYCJsWzTTuZ9+SwWZbUeDORSSlWsxMAMRIQCyv0O8vn6uln+Sc1qxdwTDijjCklVQJh/u8dlNWRxsMwC5UUqhcmPl67LS2IVyRwDaupa4xwDonDv5u2WUYyJvLBe/RTDamlKDRCuVMR9jbkmkmUX73KRlRyx8OwZxTCSud0rzs1TPZyLos3X3qpNkPSDQiB6pYw3akBzUrCm1eT6wgih9eQ3bo2Wsi2bWj2Z+UjTyPyubYE6Pd0ngzbiYWwBiXj5sPzDhiFCqYUGqNiHvWkz9gWnMMU7chp7db3cLITGOSlaYxKIWPADijo7SW3Fxg4tdmkp8Q5UcAAA==")
+        no-repeat center center/cover;
+    }
+
+    /* Right Form Section */
+    .right-form {
+      width: 60%;
+      padding: 30px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffcc80;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.25);
+      color: white;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    select option {
+      color: black;
+    }
+
+    /* Menu Items */
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.10);
+    }
+
+    .menu-item input {
+      width: 60px;
+      text-align: center;
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #ff9800;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e68900;
+      transform: scale(1.03);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="form-card">
+
+    <!-- Left Template Image -->
+    <div class="left-banner"></div>
+
+    <!-- Right Form -->
+    <div class="right-form">
+
+      <h2>🍔 Food Order Form</h2>
+
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your name">
+
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email">
+
+      <label>Select Food Items</label>
+
+      <div class="menu-item">
+        <span>Burger 🍔 (₹120)</span>
+        <input type="number" min="0" value="0">
+      </div>
+
+      <div class="menu-item">
+        <span>Pizza 🍕 (₹250)</span>
+        <input type="number" min="0" value="0">
+      </div>
+
+      <div class="menu-item">
+        <span>Pasta 🍝 (₹180)</span>
+        <input type="number" min="0" value="0">
+      </div>
+
+      <div class="menu-item">
+        <span>Fried Rice 🍚 (₹150)</span>
+        <input type="number" min="0" value="0">
+      </div>
+
+      <label>Payment Method</label>
+      <select>
+        <option>Cash on Delivery</option>
+        <option>UPI Payment</option>
+        <option>Credit/Debit Card</option>
+      </select>
+
+      <button>✅ Place Order</button>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
