@@ -68,8 +68,10 @@ Thus the case study on recent ethical initiatives in healthcare, autonomous vehi
 
 EX.NO.3 — Experiment the Regression Model Without Bias and With Bias
 Date:
+
 Aim:
 To write a Python program to experiment the regression model without bias and with bias.
+
 Algorithm:
 Import required libraries
 Generate example data
@@ -108,6 +110,7 @@ print(f"Slope: {model_no_bias.coef_[0][0]}")
 print("\nModel parameters with bias:")
 print(f"Intercept: {model_with_bias.intercept_[0]}")
 print(f"Slope: {model_with_bias.coef_[0][0]}")
+
 Output:
 Model parameters without bias:
 Slope: 6.363033406072774
