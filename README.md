@@ -73,11 +73,12 @@ Aim:
 To write a Python program to experiment the regression model without bias and with bias.
 
 Algorithm:
-Import required libraries
-Generate example data
-Fit regression model without bias
-Fit regression model with bias
-Display model parameters and output
+1)Import required libraries
+2)Generate example data
+3)Fit regression model without bias
+4)Fit regression model with bias
+5)Display model parameters and output
+
 Program:
 import numpy as np
 import matplotlib.pyplot as plt
